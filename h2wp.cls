@@ -295,7 +295,7 @@
 \newcommand{\Enote}[1]{\note{E}{#1}}
 \newcommand{\Nnote}[1]{\note{N}{#1}}
 
-\renewcommand{\thenoteCounter}[0]{\Roman{noteCounter}}
+\renewcommand{\thenoteCounter}[0]{\textcolor{byzantine}{\Roman{noteCounter}}}
 \newcommand{\refnote}[1]{\textcolor{byzantine}{\ref{#1}\pgfkeysvalueof{#1}.}}
 
 

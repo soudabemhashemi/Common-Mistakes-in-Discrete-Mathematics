@@ -62,7 +62,7 @@
 
 
 
-
+\usepackage{pgfkeys}
 
 
 
@@ -267,7 +267,7 @@
 
 
 
-\usepackage{pgfkeys}
+
 
 
 
@@ -279,63 +279,24 @@
 \newcounter{noteCounter}
 
 % Prefix for Tnotes
-\newcommand{\Tnotetype}[1]{T}
 
 % Numbered Tnote
-\providecommand{\Tnote}{}
-\renewcommand{\Tnote}[1]{%
+\newcommand{\note}[2]{%
   % Emit \newpage if option `newpage` is present
   \ifthenelse{\equal{\@opnewpage}{1}}{%
     \newpage
   }{}
-
-  % Wrap in minipage so that we don't get a line break enywhere in between
-  \refstepcounter{noteCounter}\label{#1}%
-  \paragraph{\textcolor{byzantine}{\Tnotetype..\Roman{noteCounter}}}\label{para:#1} :
+  \pgfkeyssetvalue{#2}{#1}
+  \refstepcounter{noteCounter}\label{#2}
+  \paragraph{\textcolor{byzantine}{#1.\Roman{noteCounter}}}:
 }
 
+\newcommand{\Tnote}[1]{\note{T}{#1}}
+\newcommand{\Enote}[1]{\note{E}{#1}}
+\newcommand{\Nnote}[1]{\note{N}{#1}}
 
-
-
-
-
-% Prefix for Enotes
-\newcommand{\Enotetype}[1]{E}
-
-% Numbered Enote
-\providecommand{\Enote}{}
-\renewcommand{\Enote}[1]{%
-  % Emit \newpage if option `newpage` is present
-  \ifthenelse{\equal{\@opnewpage}{1}}{%
-    \newpage
-  }{}
-
-  % Wrap in minipage so that we don't get a line break enywhere in between
-  \refstepcounter{noteCounter}\label{#1}%
-  \paragraph{\textcolor{byzantine}{\Enotetype..\Roman{noteCounter}}}\label{para:#1} :
-}
-
-
-
-
-
-% Prefix for Nnotes
-\newcommand{\Nnotetype}[1]{N}
-
-% Numbered Nnote
-\providecommand{\Nnote}{}
-\renewcommand{\Nnote}[1]{%
-  % Emit \newpage if option `newpage` is present
-  \ifthenelse{\equal{\@opnewpage}{1}}{%
-    \newpage
-  }{}
-
-  % Wrap in minipage so that we don't get a line break enywhere in between
-  \refstepcounter{noteCounter}\label{#1}%
-  \paragraph{\textcolor{byzantine}{\Nnotetype..\Roman{noteCounter}}} :
-}
-
-\renewcommand{\thenoteCounter}[0]{\textcolor{byzantine}{\Roman{noteCounter}}}
+\renewcommand{\thenoteCounter}[0]{\Roman{noteCounter}}
+\newcommand{\refnote}[1]{\textcolor{byzantine}{\ref{#1}\pgfkeysvalueof{#1}.}}
 
 
 

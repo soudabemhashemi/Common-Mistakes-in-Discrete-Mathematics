@@ -57,7 +57,7 @@
 \definecolor{byzantine}{rgb}{0.74, 0.2, 0.64}
 \definecolor{burgundy}{rgb}{0.5, 0.0, 0.13}
 \definecolor{burntsienna}{rgb}{0.91, 0.45, 0.32}
-
+\definecolor{coolblack}{rgb}{0.0, 0.18, 0.39}
 
 
 
@@ -81,7 +81,7 @@
   % Wrap in minipage so that we don't get a line break enywhere in between
 
   \newpage
-  \color{byzantine}
+  \color{coolblack}
   \begin{minipage}{\linewidth}%
     \addtocounter{chapterCounter}{1}%
     \setcounter{questionCounter}{0}%
@@ -170,9 +170,6 @@
   \begin{minipage}{\linewidth}%
     \addtocounter{questionCounter}{1}%
     \setcounter{partCounter}{0}%
-    \setcounter{TnoteCounter}{0}%
-    \setcounter{EnoteCounter}{0}%
-    \setcounter{NnoteCounter}{0}%
     \vspace{.2in}%
     \noindent{\bf \arabic{chapterCounter}.\arabic{questionCounter}. #1}%
     \vspace{0.3em} \hrule \vspace{.1in}%
@@ -279,7 +276,7 @@
 
 
 % ----- notes -------------------------------------------------------------
-\newcounter{TnoteCounter}[questionCounter]
+\newcounter{noteCounter}
 
 % Prefix for Tnotes
 \newcommand{\Tnotetype}[0]{T}
@@ -293,16 +290,15 @@
   }{}
 
   % Wrap in minipage so that we don't get a line break enywhere in between
-  \stepcounter{TnoteCounter}%
+  \stepcounter{noteCounter}%
   \vspace{.05in}%
-  \textcolor{capri}{\bf \arabic{chapterCounter}.\arabic{questionCounter}.\Tnotetype.\arabic{TnoteCounter}: }%
+  \textcolor{byzantine}{\bf \lr \Tnotetype.\arabic{noteCounter}: }%
   \vspace{.05in}%
 }
 
 
 
 
-\newcounter{EnoteCounter}[questionCounter]
 
 % Prefix for Enotes
 \newcommand{\Enotetype}[0]{E}
@@ -316,16 +312,15 @@
   }{}
 
   % Wrap in minipage so that we don't get a line break enywhere in between
-  \stepcounter{EnoteCounter}%
+  \stepcounter{noteCounter}%
   \vspace{.05in}%
-  \textcolor{capri}{\bf \arabic{chapterCounter}.\arabic{questionCounter}.\Enotetype.\arabic{EnoteCounter}: }%
+  \textcolor{byzantine}{\bf \lr \Enotetype.\arabic{noteCounter}: }%
   \vspace{.05in}%
 }
 
 
 
 
-\newcounter{NnoteCounter}[questionCounter]
 
 % Prefix for Nnotes
 \newcommand{\Nnotetype}[0]{N}
@@ -339,9 +334,9 @@
   }{}
 
   % Wrap in minipage so that we don't get a line break enywhere in between
-  \stepcounter{NnoteCounter}%
+  \stepcounter{noteCounter}%
   \vspace{.05in}%
-  \textcolor{capri}{\bf \arabic{chapterCounter}.\arabic{questionCounter}.\Nnotetype.\arabic{NnoteCounter}: }%
+  \textcolor{byzantine}{\bf \lr \Nnotetype.\arabic{noteCounter}: }%
   \vspace{.05in}%
 }
 

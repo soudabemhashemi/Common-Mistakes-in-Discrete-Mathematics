@@ -292,7 +292,7 @@
   % Wrap in minipage so that we don't get a line break enywhere in between
   \stepcounter{noteCounter}%
   \vspace{.05in}%
-  \textcolor{byzantine}{\bf \lr \Tnotetype.\arabic{noteCounter}: }%
+  \textcolor{byzantine}{\lr{\Tnotetype.\Roman{noteCounter}}:}%
   \vspace{.05in}%
 }
 
@@ -314,7 +314,7 @@
   % Wrap in minipage so that we don't get a line break enywhere in between
   \stepcounter{noteCounter}%
   \vspace{.05in}%
-  \textcolor{byzantine}{\bf \lr \Enotetype.\arabic{noteCounter}: }%
+  \textcolor{byzantine}{\lr{\Enotetype.\Roman{noteCounter}}:}%
   \vspace{.05in}%
 }
 
@@ -336,7 +336,7 @@
   % Wrap in minipage so that we don't get a line break enywhere in between
   \stepcounter{noteCounter}%
   \vspace{.05in}%
-  \textcolor{byzantine}{\bf \lr \Nnotetype.\arabic{noteCounter}: }%
+  \textcolor{byzantine}{\lr{\Nnotetype.\Roman{noteCounter}}:}%
   \vspace{.05in}%
 }
 

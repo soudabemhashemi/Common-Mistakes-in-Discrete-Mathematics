@@ -49,6 +49,7 @@
 
 % Links
 \RequirePackage{hyperref}
+\RequirePackage{nameref}
 
 \RequirePackage[extrafootnotefeatures]{xepersian}
 \settextfont[Path={./}]{IRZar.ttf}
@@ -266,8 +267,7 @@
 
 
 
-
-
+\usepackage{pgfkeys}
 
 
 
@@ -279,43 +279,40 @@
 \newcounter{noteCounter}
 
 % Prefix for Tnotes
-\newcommand{\Tnotetype}[0]{T}
+\newcommand{\Tnotetype}[1]{T}
 
 % Numbered Tnote
 \providecommand{\Tnote}{}
-\renewcommand{\Tnote}[0]{%
+\renewcommand{\Tnote}[1]{%
   % Emit \newpage if option `newpage` is present
   \ifthenelse{\equal{\@opnewpage}{1}}{%
     \newpage
   }{}
 
   % Wrap in minipage so that we don't get a line break enywhere in between
-  \stepcounter{noteCounter}%
-  \vspace{.05in}%
-  \textcolor{byzantine}{\lr{\Tnotetype.\Roman{noteCounter}}:}%
-  \vspace{.05in}%
+  \refstepcounter{noteCounter}\label{#1}%
+  \paragraph{\textcolor{byzantine}{\Tnotetype..\Roman{noteCounter}}}\label{para:#1} :
 }
 
 
 
 
 
+
 % Prefix for Enotes
-\newcommand{\Enotetype}[0]{E}
+\newcommand{\Enotetype}[1]{E}
 
 % Numbered Enote
 \providecommand{\Enote}{}
-\renewcommand{\Enote}[0]{%
+\renewcommand{\Enote}[1]{%
   % Emit \newpage if option `newpage` is present
   \ifthenelse{\equal{\@opnewpage}{1}}{%
     \newpage
   }{}
 
   % Wrap in minipage so that we don't get a line break enywhere in between
-  \stepcounter{noteCounter}%
-  \vspace{.05in}%
-  \textcolor{byzantine}{\lr{\Enotetype.\Roman{noteCounter}}:}%
-  \vspace{.05in}%
+  \refstepcounter{noteCounter}\label{#1}%
+  \paragraph{\textcolor{byzantine}{\Enotetype..\Roman{noteCounter}}}\label{para:#1} :
 }
 
 
@@ -323,23 +320,22 @@
 
 
 % Prefix for Nnotes
-\newcommand{\Nnotetype}[0]{N}
+\newcommand{\Nnotetype}[1]{N}
 
 % Numbered Nnote
 \providecommand{\Nnote}{}
-\renewcommand{\Nnote}[0]{%
+\renewcommand{\Nnote}[1]{%
   % Emit \newpage if option `newpage` is present
   \ifthenelse{\equal{\@opnewpage}{1}}{%
     \newpage
   }{}
 
   % Wrap in minipage so that we don't get a line break enywhere in between
-  \stepcounter{noteCounter}%
-  \vspace{.05in}%
-  \textcolor{byzantine}{\lr{\Nnotetype.\Roman{noteCounter}}:}%
-  \vspace{.05in}%
+  \refstepcounter{noteCounter}\label{#1}%
+  \paragraph{\textcolor{byzantine}{\Nnotetype..\Roman{noteCounter}}} :
 }
 
+\renewcommand{\thenoteCounter}[0]{\textcolor{byzantine}{\Roman{noteCounter}}}
 
 
 
@@ -355,7 +351,6 @@
   \textcolor{burntsienna}{\bf \notestype: }%
   \vspace{.05in}%
 }
-
 
 
 

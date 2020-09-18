@@ -97,9 +97,6 @@ $\frac{60}{14}$
 \end{enumerate}
 
 
-\chapter*{شمارش}
-\question
-\question
 \question
 ضریب عبارت $ x ^ {12}$
 در بسط عبارت
@@ -149,6 +146,7 @@ $$(1 - 4x) ^ {-5} =
 جمله $x^{12}$ به ازای مقدار $k = 12$ ساخته می‌شود. بنابراین جواب برابر خواهد بود با: 
 $$\binom{16}{12} (4)^{12}$$
 
+\question
 
 \question 
    با استفاده از توابع مولد نشان دهید تعداد روش های انتخاب ۴ عضو دو به دو  نامتوالی از مجموعه اعداد n
@@ -276,5 +274,43 @@ $$\binom{16}{12} (4)^{12}$$
                 $x^{n - 7}$ به ازای $k = n -7$ ساخته می‌شود. بنابراین جواب برابر است با:\\
                
                     $$\binom{n - 3}{4}$$
-                	 
+        
+
+\question
+ اتحاد زیر را ثابت کنید.
+     \begin{align*}
+     \sum_{i=0}^{n} i{\binom{n}{i}}^2 = \frac{n}{2} \binom{2n}{n}
+     \end{align*}
+     
+\solution
+\begin{align*}
+A=\sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{\times 2} 2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{ j=n-i } \\ 
+2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{j=0}^{n} (n-j){\binom{n}{n-j}}^2 \rightarrow 2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{j=0}^{n} (n-j){\binom{n}{j}}^2 = \\
+ \sum_{i=0}^{n} (i + (n-i)) {\binom{n}{i}}^2 \rightarrow 2A = n \sum_{i=0}^{n} {\binom{n}{i}}^2 \rightarrow 2A = n \sum_{i=0}^{n} \binom{n}{i} \binom{n}{n-i}
+\end{align*}
+بنابراین میدانیم که:
+  $ \hyperref[sec:1]{\textcolor{red}{(1.7.N.1)}}  $
+  \begin{center}
+  $  2A = n\binom{2n}{n} \rightarrow A= \frac{n}{2} \binom{2n}{n} $
+  \end{center}
+
+
+\notes
+
+\Nnote  باید فرمول و اتحاد های مورد استفاده و رفرنس معتبر آن ‌ذکر شود . به عنوان رفرنس اسم اتحاد هم کافی است. 
+ \label{sec:1}         	 
+ 
+ 
+ \solution*{پاسخ صحیح}
+ طبق اتحاد واندرموند داریم:
+
+$$ \sum_{i=0}^{k} \binom{m}{i} \binom{n}{k-i} = \binom {m+n}{k} \hspace{2cm} (1) $$
+\begin{align*}
+A=\sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{\times 2} 2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{ j=n-i } \\ 
+2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{j=0}^{n} (n-j){\binom{n}{n-j}}^2 \rightarrow 2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{j=0}^{n} (n-j){\binom{n}{j}}^2 = \\
+ \sum_{i=0}^{n} (i + (n-i)) {\binom{n}{i}}^2 \rightarrow 2A = n \sum_{i=0}^{n} {\binom{n}{i}}^2 \rightarrow 2A = n \sum_{i=0}^{n} \binom{n}{i} \binom{n}{n-i} \xrightarrow[m=n=k]{(1)} \\
+ 2A= n \binom{2n}{n} \rightarrow A= \frac{n}{2} \binom{2n}{n}
+\end{align*}
+
+
 \end{document}

@@ -281,7 +281,7 @@ $$\binom{16}{12} (4)^{12}$$
 
 رقم $i$ ام این عدد را با $x_i$ نشان می دهیم, بنابراین به دنبال یافتن تعداد جواب های صحیح معادله زیر هستیم:
     \[\sum\limits_1^9 x_i=32\]
-    \[\forall i \in [1,9] ,i \in N : x_i\leq 9\]
+    \[\forall i \in [1,9] : x_i\leq 9\]
     %$\sum\limits_1^9 x_i=32$
     %$\exists i \in [1,9] ,i \in N : x_i\geq 10$
   تعداد جواب های صحیح این معادله را به کمک اصل متمم پیدا می کنیم:\\
@@ -289,8 +289,8 @@ $$\binom{16}{12} (4)^{12}$$
      
      \[\binom{40}{8}\]\\
     -حالات نامطلوب:تعداد جواب های صحیح نامنفی معادله $\sum\limits_1^9 x_i=32$  
-     به طوری که:\\
-     ($\exists i \in [1,9] ,i \in N : x_i\geq 10$)\\
+     به طوری که:
+     $\exists i \in [1,9] : x_i\geq 10$\\
      حال اگر مجموعه حالت هایی که در آن $x_i\geq 10 $ است را با $A_i$نشان دهیم, کافی است تعداد اعضای اجتماع این مجموعه ها را بیابیم\\ 
      طبق اصل شمول و عدم شمول و با توجه به تقارن میان $A_i$ ها داریم: 
      \[|A_1\cup A_2\cup... \cup A_9|=\binom{9}{1}|A_1|+\binom{9}{2}|A_1\cap A_2|+...+\binom{9}{9}|A_1\cap A_2\cap...\cap A_9|\]
@@ -447,19 +447,13 @@ $$\binom{16}{12} (4)^{12}$$
 \question
  اتحاد زیر را ثابت کنید.
      \begin{align*}
-     \sum_{i=0}^{n} i{\binom{n}{i}}^2 = \frac{n}{2} \binom{2n}{n}
+     \sum_{i=k}^{n} {\binom{i}{k}} = \binom{n+1}{k+1}
      \end{align*}
      
 \solution
-\begin{align*}
-A=\sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{\times 2} 2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{ j=n-i } \\ 
-2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{j=0}^{n} (n-j){\binom{n}{n-j}}^2 \rightarrow 2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{j=0}^{n} (n-j){\binom{n}{j}}^2 = \\
- \sum_{i=0}^{n} (i + (n-i)) {\binom{n}{i}}^2 \rightarrow 2A = n \sum_{i=0}^{n} {\binom{n}{i}}^2 \rightarrow 2A = n \sum_{i=0}^{n} \binom{n}{i} \binom{n}{n-i}
-\end{align*}
-بنابراین میدانیم که:
-  \begin{center}
-  $  2A = n\binom{2n}{n} \rightarrow A= \frac{n}{2} \binom{2n}{n} $
-  \end{center}
+
+\[A=\sum_{i=k}^{n} {\binom{i}{k}} =\sum_{i=k}^{n} {\binom{i+1}{k+1}-\binom{i}{k+1}}=\sum_{i=k}^{n} {\binom{i+1}{k+1}}-\sum_{i=k}^{n} {\binom{i}{k+1}}\]\[=\binom{n+1}{k+1}+\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}-(0+\sum_{i=k+1}^{n} {\binom{i}{k+1}})=\binom{n+1}{k+1}+\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}-\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}=\binom{n+1}{k+1}\]
+
 
 
 \notes
@@ -469,15 +463,12 @@ A=\sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{\times 2} 2A = \sum_{i=0}^{n} i{
  
  
  \solution*{پاسخ صحیح}
- طبق اتحاد واندرموند داریم:
+ طبق اتحاد پاسکال داریم:
 
-$$ \sum_{i=0}^{k} \binom{m}{i} \binom{n}{k-i} = \binom {m+n}{k} \hspace{2cm} (1) $$
-\begin{align*}
-A=\sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{\times 2} 2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{i=0}^{n} i{\binom{n}{i}}^2 \xrightarrow{ j=n-i } \\ 
-2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{j=0}^{n} (n-j){\binom{n}{n-j}}^2 \rightarrow 2A = \sum_{i=0}^{n} i{\binom{n}{i}}^2 + \sum_{j=0}^{n} (n-j){\binom{n}{j}}^2 = \\
- \sum_{i=0}^{n} (i + (n-i)) {\binom{n}{i}}^2 \rightarrow 2A = n \sum_{i=0}^{n} {\binom{n}{i}}^2 \rightarrow 2A = n \sum_{i=0}^{n} \binom{n}{i} \binom{n}{n-i} \xrightarrow[m=n=k]{(1)} \\
- 2A= n \binom{2n}{n} \rightarrow A= \frac{n}{2} \binom{2n}{n}
-\end{align*}
+$$ \binom{n}{k}+\binom{n+1}{k}=\binom{n+1}{k+1}$$
+پس ظبق این اتحاد می توان نوشت:
+\[\]
+\[\sum_{i=k}^{n} {\binom{i}{k}} =\sum_{i=k}^{n} {\binom{i+1}{k+1}-\binom{i}{k+1}}=\sum_{i=k}^{n} {\binom{i+1}{k+1}}-\sum_{i=k}^{n} {\binom{i}{k+1}}\]\[=\binom{n+1}{k+1}+\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}-(0+\sum_{i=k+1}^{n} {\binom{i}{k+1}})=\binom{n+1}{k+1}+\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}-\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}=\binom{n+1}{k+1}\]
 
 
 \end{document}

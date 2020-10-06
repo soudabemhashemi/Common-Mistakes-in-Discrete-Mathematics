@@ -478,7 +478,7 @@ $$ \binom{n}{k}+\binom{n+1}{k}=\binom{n+1}{k+1}$$
 
 \question
 
-%% question 9
+%% question 2
 \question
 
 صفحه‌ای دو بعدی را در نظر بگیرید که از هر دو طرف تا بینهایت ادامه دارد و با دو رنگ آن را رنگ کرده ایم (حتما از هر دو رنگ استفاده شده است).آیا دو نقطه به فاصله d (عدد حقیقی) وجود دارد که هم‌رنگ باشند؟
@@ -501,10 +501,10 @@ $ d = d \pm \epsilon $
 \Tnote{n19}
 نقیض حکم سوال به نادرستی بیان شده است.فرض کنید P(x,y) هم‌رنگ بودن دو نقطه  x و y باشد. D(x,y) یه فاصله d بودن دو نقطه  x و y باشد.\\
 حکم سوال بیان میکند که : 
-$ \exists (x,y) ( D(x,y) \wedge P(x,y)) $
+$ \exists x,y ( D(x,y) \wedge P(x,y)) $
 \\
 برای نقیض کردن آن داریم:\\
-$ \neg \exists (x,y) ( D(x,y) \wedge P(x,y)) = \forall (x,y) (\neg (D(x,y) \wedge P(x,y)) = \forall (x,y) (\neg D(x,y) \vee \neg P(x,y)) $
+$ \neg \exists x,y, ( D(x,y) \wedge P(x,y)) = \forall x,y, (\neg (D(x,y) \wedge P(x,y)) = \forall x,y, (\ne\\g D(x,y) \vee \neg P(x,y)) $
 \\
 به صورت فارسی می‌توان گفت : هیج دو نقطه به فاصله‌ی d هم‌رنگ نیستند.
 
@@ -530,8 +530,47 @@ $ \neg \exists (x,y) ( D(x,y) \wedge P(x,y)) = \forall (x,y) (\neg (D(x,y) \wedg
     
     
     
-  %% question 10
+  %% question 3
   \question
-  
 
+ درستی یا نادرستی گزاره زیر را اثبات کنید.
+  \begin{align*}
+  (\forall x,p(x)) \rightarrow (\exists y, q(x,y))
+  \end{align*}
+ 
+ 
+ 
+ \solution
+ با یک مثال , نادرسی گزاره فوق را نشان می‌دهیم.\\
+ سمت چپ گزاره 
+ $(\forall x,p(x))$
+ را P
+و سمت راست 
+$ (\exists y, q(x,y)) $
+را Q می‌نامیم.
+پس داریم:
+$ P \rightarrow Q $
+\\
+$x_1$
+را در نظر می‌گیریم طوری که P درست باشد.
+ سپس 
+$ y_1 $
+را طوری انتخاب می‌کنیم که Q نادرست باشد.
+\begin{align*}
+ P=True \rightarrow Q=False
+\end{align*}
+بنابراین طبق جدول truth-table
+گزاره فوق نادرست خواهد بود.\\
+
+
+ \solution
+چون در قسمت سمت چپ از سور عمومی استفاده شده است 
+$ x_1 $
+را طوری می‌یابیم که ناقض P باشد. بنابراین طبق truth-table درستی یا نادرستی Q اهمیتی ندارد .
+\begin{align*}
+ P=False \rightarrow Q= -
+\end{align*}
+ در کل گزاره فوق درست است.
+
+ 
 \end{document}

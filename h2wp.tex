@@ -467,7 +467,7 @@ $$\binom{16}{12} (4)^{12}$$
  
  طبق اتحاد پاسکال داریم:
 
-$$ \binom{n}{k}+\binom{n+1}{k}=\binom{n+1}{k+1}$$
+$$ \binom{n}{k}+\binom{n}{k+1}=\binom{n+1}{k+1}$$
 پس ظبق این اتحاد می توان نوشت:
 \[\]
 \[\sum_{i=k}^{n} {\binom{i}{k}} =\sum_{i=k}^{n} {\binom{i+1}{k+1}-\binom{i}{k+1}}=\sum_{i=k}^{n} {\binom{i+1}{k+1}}-\sum_{i=k}^{n} {\binom{i}{k+1}}\]\[=\binom{n+1}{k+1}+\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}-(0+\sum_{i=k+1}^{n} {\binom{i}{k+1}})=\binom{n+1}{k+1}+\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}-\sum_{i=k}^{n-1} {\binom{i+1}{k+1}}=\binom{n+1}{k+1}\]
@@ -476,7 +476,66 @@ $$ \binom{n}{k}+\binom{n+1}{k}=\binom{n+1}{k+1}$$
 
 \chapter*{منطق}
 
+
 \question
+گزاره های زیر همگی درست هستند, با در نظر گرفتن آن‌ها, درستی یا نادرستی گزاره های ۱ و ۲ را بررسی کنید.
+\begin{itemize}
+\item اگر کار نداشته باشم یا پولدار باشم, تفریح می کنم
+\item اگر تفریح بکنم, فیلم می بینم یا بستنی می خورم
+\item بستنی نمی خورم و می خوابم
+\item اگر بخوابم, فیلم نمی بینم
+\end{itemize}
+گزاره ها:
+\begin{enumerate}
+\item من کار دارم
+\item من پولدار هستم
+\end{enumerate}
+\solution
+چون خوابیدم, فیلم هم ندیدم, پس چون فیلم ندیدم, تفریح هم نکردم, پس طبق شرط اول, من پولدار نیستم و کار دارم
+\notes
+\Nnote{n19} بهتر است برای جلو گیری از اشتباه, از نوشتار منطقی استفاده کرده و فارسی ننویسیم
+\Enote{n20} باید فقط از تبدیلات تعریف شده استفاده کرد و استفاده از تبدیلات دیگر بدون اثبات صحیح نیست
+\solution*{پاسخ صحیح}
+ 
+هر گزاره را با یک حرف نشان می دهیم:
+\begin{itemize}
+\item من کار دارم $p= $
+\item من پولدار هستم $q= $ 
+\item من تفریح می کنم $r= $ 
+\item من فیلم می بینم $s= $ 
+\item من بستنی می خورم $t= $ 
+\item من می خوابم $u= $ 
+\end{itemize}
+فرض ها:
+\begin{itemize}
+\item $q \lor \neg p\implies r$
+\item $r\implies s\lor t$
+\item $\neg t \land u$
+\item $u \implies \neg s$
+\end{itemize}
+حال داریم:
+\begin{enumerate}
+\item $\neg t \land u$(فرض) 
+\item $u$(ساده سازی عطفی)
+\item $u \implies \neg s$ (فرض)
+\item $\neg s$ (طبق ۳)
+\item $\neg t$ (طبق ۱: ساده سازی عطفی)
+\item $\neg t \land \neg s$ (طبق ۳و۴ : ترکیب عطفی)
+\item $r\implies s\lor t$
+\item $\neg(s\lor t)\implies \neg r$
+\item $\neg s \land \neg t \implies \neg r$
+\item $neg r$
+\item $q \land \neg p\implies r$
+\item $\neg r \implies \neg(q \lor \neg p)$
+\item $\neg(q \lor \neg p)$
+\item $\neg q \land p$
+\item $\neg q$
+\item $p$
+
+پس ۱ صحیح و ۲ غلط است
+\end{enumerate}
+
+
 
 %% question 2
 \question

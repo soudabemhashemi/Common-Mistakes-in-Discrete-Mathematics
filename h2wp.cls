@@ -15,7 +15,7 @@
 % Better fonts with accents
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xcolor}
-\usepackage[a4paper, total={6in, 9.5in}]{geometry}
+\RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
 \RequirePackage{tikz}
 
 % Required for starred commands
@@ -51,9 +51,11 @@
 \RequirePackage{hyperref}
 \RequirePackage{nameref}
 
+\RequirePackage{pgfkeys}
+
 \RequirePackage[extrafootnotefeatures]{xepersian}
 \settextfont[Path={./}]{IRZar.ttf}
-\setdigitfont[Path={./}]{IRZar.ttf}
+% \setdigitfont[Path={./}]{IRZar.ttf}
 
 \definecolor{capri}{rgb}{0.0, 0.75, 1.0}
 \definecolor{byzantine}{rgb}{0.74, 0.2, 0.64}
@@ -63,7 +65,6 @@
 
 
 
-\usepackage{pgfkeys}
 
 
 

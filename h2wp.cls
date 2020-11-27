@@ -162,6 +162,7 @@
   \end{minipage}
   \color{black}
   }
+  
 }
 
 % Named question, takes one argument
@@ -184,6 +185,7 @@
   \end{minipage}
   \color{black}
   }
+
 }
 
 

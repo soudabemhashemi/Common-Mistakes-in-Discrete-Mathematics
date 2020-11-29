@@ -15,7 +15,7 @@
 % Better fonts with accents
 \RequirePackage[T1]{fontenc}
 \RequirePackage{xcolor}
-\usepackage[a4paper, total={6in, 9.5in}]{geometry}
+\RequirePackage[a4paper, total={6in, 9.5in}]{geometry}
 \RequirePackage{tikz}
 
 % Required for starred commands
@@ -51,9 +51,11 @@
 \RequirePackage{hyperref}
 \RequirePackage{nameref}
 
+\RequirePackage{pgfkeys}
+
 \RequirePackage[extrafootnotefeatures]{xepersian}
 \settextfont[Path={./}]{IRZar.ttf}
-\setdigitfont[Path={./}]{IRZar.ttf}
+% \setdigitfont[Path={./}]{IRZar.ttf}
 
 \definecolor{capri}{rgb}{0.0, 0.75, 1.0}
 \definecolor{byzantine}{rgb}{0.74, 0.2, 0.64}
@@ -63,7 +65,6 @@
 
 
 
-\usepackage{pgfkeys}
 
 
 
@@ -83,6 +84,7 @@
   % Wrap in minipage so that we don't get a line break enywhere in between
 
   \newpage
+  {
   \color{coolblack}
   \begin{minipage}{\linewidth}%
     \addtocounter{chapterCounter}{1}%
@@ -94,6 +96,7 @@
     \end{center}
   \end{minipage}
   \color{black}
+  }
 }
 
 % Named chapter, takes one argument
@@ -141,6 +144,7 @@
     \newpage
   }{}
 
+  {
   \color{blue}
   % Wrap in minipage so that we don't get a line break enywhere in between
   \begin{minipage}{\linewidth}%
@@ -157,6 +161,8 @@
       \vspace{0.3em} \hrule \vspace{.1in}%
   \end{minipage}
   \color{black}
+  }
+  
 }
 
 % Named question, takes one argument
@@ -168,6 +174,7 @@
   }{}%
   % Wrap in minipage so that we don't get a line break enywhere in between
   
+  {
   \color{blue}
   \begin{minipage}{\linewidth}%
     \addtocounter{questionCounter}{1}%
@@ -177,6 +184,8 @@
     \vspace{0.3em} \hrule \vspace{.1in}%
   \end{minipage}
   \color{black}
+  }
+
 }
 
 
@@ -208,6 +217,7 @@
     \newpage
   }{}
 
+  {
   \color{red}
   % Wrap in minipage so that we don't get a line break enywhere in between
   \begin{minipage}{\linewidth}%
@@ -222,6 +232,7 @@
         \fi
   \end{minipage}
   \color{black}
+  }
 
 }
 
@@ -236,6 +247,7 @@
   }{}%
   % Wrap in minipage so that we don't get a line break enywhere in between
   
+  {
   \color{red}
   \begin{minipage}{\linewidth}%
     \setcounter{partCounter}{0}%
@@ -244,6 +256,7 @@
     % \vspace{0.3em} \hrule \vspace{.1in}%
   \end{minipage}
   \color{black}
+  }
 }
 
 % Override normal section defintions

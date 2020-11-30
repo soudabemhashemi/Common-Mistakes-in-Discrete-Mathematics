@@ -55,7 +55,7 @@
 
 \RequirePackage[extrafootnotefeatures]{xepersian}
 \settextfont[Path={./}]{IRZar.ttf}
-% \setdigitfont[Path={./}]{IRZar.ttf}
+\setdigitfont[Path={./}]{IRZar.ttf}
 
 \definecolor{capri}{rgb}{0.0, 0.75, 1.0}
 \definecolor{byzantine}{rgb}{0.74, 0.2, 0.64}

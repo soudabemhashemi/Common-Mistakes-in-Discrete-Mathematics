@@ -111,6 +111,44 @@
 
 
 
+\WithSuffix\providecommand\freechapter*{}
+\WithSuffix\renewcommand\freechapter*[1]{%
+  % Emit \newpage if option `newpage` is present
+  \ifthenelse{\equal{\@opnewpage}{1}}{%
+    \newpage%
+  }{}%
+  % Wrap in minipage so that we don't get a line break enywhere in between
+
+  \newpage
+  {
+  \color{coolblack}
+  \begin{minipage}{\linewidth}%
+    \setcounter{questionCounter}{0}%
+    \begin{center}
+      \vspace{2cm}
+      \scalebox{3}{\bf #1}%
+      \vspace{2cm}
+    \end{center}
+  \end{minipage}
+  \color{black}
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

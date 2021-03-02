@@ -2,7 +2,7 @@
 \LoadClassWithOptions{article}
 \ProvidesClass{homework}[2014/12/16 Class file for homework assignments]
 
-% ----- Options ---------------------------------------------------------------
+% ----- Options -----------------------------------------------------------------
 \newcommand\@opanon{0}
 \DeclareOption{anonymous}{\renewcommand\@opanon{1}}
 \newcommand\@opnewpage{0}

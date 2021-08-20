@@ -1,0 +1,2 @@
+# Common Mistakes in Discrete Mathematics
+This booklet was written as extra material for the discrete mathematics course. It aims to help students to avoid making mistakes in writing proofs. It contains a set of problems; each problem has one or more wrong or incomplete answers that cover the most common mistakes made in that subject. We explain each error in detail and provide a complete solution at the end to help the reader understand the points.

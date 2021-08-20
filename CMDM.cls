@@ -448,7 +448,7 @@
     % Don't put header on first page
     \thispagestyle{plain}
 
-    \includegraphics[width = 2cm]{QLogo.jpg}\\[2ex]
+    \includegraphics[width = 2cm]{pictures/QLogo.jpg}\\[2ex]
     
     \begin{center}
       {\Large \eventtype{}}
